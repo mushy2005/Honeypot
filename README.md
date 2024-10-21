@@ -5,9 +5,18 @@ This repository outlines my steps to deploy and manage a **T-Pot Honeypot** on *
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Prerequisites](#prerequisites)
-3. [Project Setup](#project-setup)
+2. [Project Setup](#project-setup)
 
 ## Introduction
 A **honeypot** is essentially a trap designed to attract adversaries. It works as a real vulnerable computer system, which any adversary can attack, and their attempts benefit us by allowing us to learn more about their attack mechanisms. Due to the sensitive nature of honeypots, it's highly recommended to follow certain best practices when it comes to deploying and managing a honeypot safely. 
 
+## Project Setup
+### VM Instance Configuration
+- After creating an account on GCP, I created a new VM instance under the `Computer Engine` section, which includes virtual machines, GPUs, etc. I kept most of the default settings except I changed the `machine type` to a `custom e2`, which included 2 vCPU and around 10 GB of memory. An `e2-standard` configuration would also work just fine. I also enabled `HTTP/HTTPS traffic` under the Firewalls section, as it was necessary for T-Pot to function. The `boot disk` included an `Ubuntu 22.04` image with 40 GB of storage.
+
+### Firewall Rules
+- Proper firewall rules ensure the safe deployment of T-Pot. I created a new firewall rule called `tpot-firewall` with the following settings:
+- Here's what all of the firewall rules look like:
+
+### Installation
+- 
