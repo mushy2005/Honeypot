@@ -19,4 +19,4 @@ A **honeypot** is essentially a trap designed to attract adversaries. It works a
 - Here's what all of the firewall rules look like:
 
 ### Installation
-- 
+- After configuring everything, I followed through ![T-Pot's GitHub](https://github.com/telekom-security/tpotce) for instructions to install. The whole process was quite simple, though I did land into some problems but managed to solve them with ease. 
