@@ -12,11 +12,11 @@ A **honeypot** is essentially a trap designed to attract adversaries. It works a
 
 ## Project Setup
 ### VM Instance Configuration
-- After creating an account on GCP, I created a new VM instance under the `Computer Engine` section, which includes virtual machines, GPUs, etc. I kept most of the default settings except I changed the `machine type` to a `custom e2`, which included 2 vCPU and around 10 GB of memory. An `e2-standard` configuration would also work just fine. I also enabled `HTTP/HTTPS traffic` under the Firewalls section, as it was necessary for T-Pot to function. The `boot disk` included an `Ubuntu 22.04` image with 40 GB of storage.
+- After creating an account on GCP, I created a new VM instance under the `Computer Engine` section, which includes virtual machines, GPUs, etc. I kept most of the default settings except I changed the `machine type` to a `custom e2`, which included 2 vCPU and around 10 GB of memory. An `e2-standard` configuration would also work just fine. I also enabled `HTTP/HTTPS traffic` under the Firewalls section, as it was necessary for T-Pot to function. The `boot disk` included an `Ubuntu 22.04` image with 40 GB of storage. For a visual reference: <img src="https://github.com/mushy2005/Honeypot/blob/main/images/enable-firewall.png"><br><img src="https://github.com/mushy2005/Honeypot/blob/main/images/bootdisk.png">
 
 ### Firewall Rules
-- Proper firewall rules ensure the safe deployment of T-Pot. I created a new firewall rule called `tpot-firewall` with the following settings: 
-- Here's what all of the firewall rules look like:
+- Proper firewall rules ensure the safe deployment of T-Pot. I created a new firewall rule called `tpot-firewall` with the following settings: <img src="https://github.com/mushy2005/Honeypot/blob/main/images/firewall-rule.png" width=40% height=40%>
+- Here's what all of the firewall rules look like: <img src="https://github.com/mushy2005/Honeypot/blob/main/images/all-rules.png">
 
 ### Installation
 - After configuring everything, I followed through ![T-Pot's GitHub](https://github.com/telekom-security/tpotce) for instructions to install. The whole process was quite simple, though I did land into some problems but managed to solve them with ease.
