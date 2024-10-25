@@ -7,9 +7,10 @@ This repository outlines my steps to deploy and manage a **T-Pot Honeypot** on *
 1. [Introduction](#introduction)
 2. [Project Setup](#project-setup)
 3. [T-Pot](#t-pot)
+4. [Conclusion](#conclusion)
 
 ## Introduction
-A **honeypot** is essentially a trap designed to attract adversaries. It works as a real vulnerable computer system, which any adversary can attack, and their attempts benefit us by allowing us to learn more about their attack mechanisms. Due to the sensitive nature of honeypots, it's highly recommended to follow certain best practices when it comes to deploying and managing a honeypot safely. 
+A **honeypot** is essentially a trap designed to attract adversaries. It works as a real vulnerable computer system, which any adversary can attack, and their attempts benefit us by allowing us to learn more about their attack mechanisms. Due to the sensitive nature of honeypots, it's highly recommended to follow certain best practices when it comes to deploying and managing a honeypot safely. I chose T-Pot specifically due to its ease of deployment, as it combines multiple honeypots into one whole solution, and it provides a detailed picture of potential malicious activity using data visualization. It achieves this by integrating the ELK Stack (Elasticsearch, Logstash, Kibana) into its framework, which allows security analysts to organize and analyze all of the aggregated data. 
 
 ## Project Setup
 ### VM Instance Configuration
@@ -41,4 +42,11 @@ This gives us two crucial details about the attacker: the IP address and the "re
 - Looking at the graph below, we can observe the honeypot service that got attacked the most. In our case, `Ddospot`, which is a honeypot that tracks UDP-based Distributed Denial of Service (DDoS) attacks, got the most hits. We can also see that Cowrie nearly got as many hits as Ddospot, which helps us to determine the service that most of the attackers target.<img src="https://github.com/mushy2005/Honeypot/blob/main/images/bar.png">
 - We're also able to see where the majority of the attacks came from, as well as the services that got attacked during a certain interval of time. These two pieces of information could assist in an investigation, as they reveal background information regarding the attacks.<img src="https://github.com/mushy2005/Honeypot/blob/main/images/map.png" width=70% height=70%><br><img src="https://github.com/mushy2005/Honeypot/blob/main/images/histogram.png" width=70% height=70%>
 - When we scroll down, we're presented with much more information, though I'll only be focusing on two graphs. Along with providing us with geographic information regarding the attacks, Kibana also provides us with the common usernames and passwords used by attacks to gain access to our system. The following shows just that. <img src="https://github.com/mushy2005/Honeypot/blob/main/images/usernames.png" width=70% height=70%><br><img src="https://github.com/mushy2005/Honeypot/blob/main/images/pwds.png" width=70% height=70%>
-- As you can guess, the bigger ones are the most used ones. All of this information that Kibana provides us with can be used to pinpoint general trends, which is crucial when making decisions regarding security.  
+- As you can guess, the bigger ones are the most used ones. All of this information that Kibana provides us with can be used to pinpoint general trends, which is crucial when making decisions regarding security.
+
+### Spiderfoot
+- Spiderfoot is an Open Source Intelligence (OSINT) integrated into T-Pot to help analyze data regarding malicious activity. One key feature of Spiderfoot is that it can determine the reputation of an IP address or domain by checking countless sources, such as security databases. Here's what its homepage looks like:<img src="https://github.com/mushy2005/Honeypot/blob/main/images/spider.png">
+- To scan an IP address or domain, we simply click the `Scan` button, which will take us to another page: <img src="https://github.com/mushy2005/Honeypot/blob/main/images/spiderscan.png" width=70% height=70%>
+
+## Conclusion
+
