@@ -1,4 +1,4 @@
-# Honeypot using T-Pot
+# T-Pot Honeypot Deployment using Google Cloud Platform (GCP)
 
 This repository outlines my steps to deploy and manage a **T-Pot Honeypot** on **Google Cloud Platform (GCP)**. T-Pot is a multi-honeypot platform designed to monitor, capture, and visualize various types of cyberattacks. 
 
